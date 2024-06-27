@@ -1,0 +1,942 @@
+#                        ~~~~ PROJECT LOGIC ~~~~~~
+
+#                        STEP 1: DATA COLLECTION
+#  First, I collected the relevant terms and definitions from the following resources:
+# research paper : https://jamanetwork.com/journals/jama/fullarticle/1677346
+#   genomics website : https://www.genomicseducation.hee.nhs.uk/glossary/
+
+
+#                       STEP 2: MAKING DICTIONARIES AND FUNCTIONS FOR EACH LETTER
+# MAKE SEARCH BY LETTER FUNCTION EG. SEARCH_b, search_c, search_d etc.
+# In the function definition, 1. create the letter dictionary
+# ASK the user if they want to search a specific term in that letter section, 
+# or all the terms in the letter section?
+
+#2. search by letter which prints all the terms starting with that letter.
+#3. search by term, in which we take a term from user and match it with the key
+# of the dictionary. and then return the value of the dictionary.
+
+#                            PROJECT EXTENSION:
+# SEARCH BY TERM 
+# it will search a term in all the dictionaries.
+# make a function where all the dictionaries will be merged together.
+# i found a merge dictionaries option but for that i had 
+# re-create one big dictionary with all the terms inside.
+# As I had already exceeded 500+ lines of code, I leave this step
+# for later so that I can find a more efficient way of coding. 
+
+
+
+def search_a():
+    a = {
+     'Acrocentric': 'A chromosome where the centromere is not central and is instead located near the end of the chromosome. Humans usually have five pairs of acrocentric autosomes (chromosomes 13, 14, 15, 21, 22). The Y chromosome is also acrocentric.',
+     'Adenine' : 'One of the four organic bases found in DNA and RNA. Adenine pairs with thymine in DNA and with uracil in RNA. Adenine is denoted by the letter ‘A’.',
+     'Alignment' : 'The process of using a reference genome to assist with piecing a genome back together following sequencing of DNA fragments.',
+     'Allele': 'Alternative form of a gene or DNA sequence, Variations in clinical traits and phenotypes are allelic if they arise from the same gene sequence or locus and nonallelic if they arise from different gene sequences of different loci.', 
+     'Alternative splicing': 'Use of different exons in formation of mRNA from initially identical transcripts. This results in the generation of related proteins from one gene, often in a tissue or developmental stage–specific manner.',
+     'Amino acids' : 'The chemical building blocks of which proteins are made. There are 20 different types of amino acids which can combine in various forms to produce the many different proteins in our bodies.',
+     'Amniocentesis': 'A procedure that removes a small sample of cells from the amniotic fluid surrounding a fetus to test for certain conditions.',
+     'Analytical validity': 'The likelihood that a test result is correct, ie, a specific variant said to be present is present or said to be absent is absent.',
+     'Aneuploidy':'The presence of an abnormal number of chromosomes in a cell, which can be more or fewer than the normal number.',
+     'Array':'(same as microarray) A technology used to study many genes simultaneously, usually consisting of an ordered microscopic pattern of known nucleic acid sequences on a glass slide. In a common type of microarray, a sample of DNA or RNA is added to the slide and sequence-dependent binding is measured using sensitive fluorescent detection methods.',
+     'Artefact (genetics)':'In genetics a result that does not represent the true biological material or function but arises from a technical, often artificial, process.',
+     'Assembly':'The process of piecing back together DNA sequence reads from fragments to create one readable genome sequence.',
+     'Attributable risk': 'The difference in incidence of disease in an exposed vs unexposed population; in genetics the exposure can be the presence of a specific genetic variation in the genome.',
+     'Autoimmune condition':'A condition that occurs due to the body’s immune system not functioning correctly and as a result healthy tissue is attacked.',
+     'Autosomes' :'Any of the 22 chromosomes other than the sex chromosomes.',
+     'Autosomal dominant':'When a single copy of an allele on an autosome is sufficient to result in a phenotype. The allele, phenotype and inheritance pattern are referred to as dominant.',
+     'Autosomal dominant condition':'Also known as Autosomal Dominant Inheritance. Autosomal dominant conditions are caused by variants in genes on one of the 22 autosomal chromosomes. The condition presents in the heterozygous state, where the pathogenic variant is present in only one copy of the gene.',
+     'Autosomal inheritance':'The pattern of inheritance is determined by the transmission of chromosomes from one generation to the next. Autosomal inheritance is when the gene or locus of interest is located on one of the autosomal chromosomes.',
+     'Autosomal recessive condition':'A condition caused by pathogenic variants in both copies of a gene on one of the 22 autosomal chromosomes. The condition presents in the homozygous or compound heterozygous state.'
+   }
+    
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in a:
+            value=a[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Term not found")    
+
+    
+    if user_input == 2:
+        for key in a:
+            value=b[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+
+
+def search_b():
+#Searching by  letter b 
+# this function returns all the terms starting with b
+    b={
+    'Bacteriophage': 'Viruses whose hosts are bacterial cells.',
+    'Base pair': 'Two complementary nucleotides that are paired in double-stranded DNA. Adenosine (A) pairs with thymine (T), and guanine (G) pairs with cytosine (C). A bp is also used as a physical distance of length of a sequence of nucleotides, eg, 20 bp is a chain of DNA composed of 20 nucleotides.',
+    'Balanced translocation':'A type of genetic variant where part of one chromosome has moved, usually to another, non-homologous, chromosome. Rarely, it can also move to another part of the same chromosome. In both cases, there is no net loss or gain of genetic material.',
+    'Bases':'Components of DNA or RNA. In DNA there are four chemical bases: adenine (A), guanine (G), thymine (T) and cytosine (C). In RNA the bases are identical except for thymine which is replaced with uracil (U).',
+    'BRCA genes':'There are two BRCA genes (BRCA1 & BRCA2) which are tumour suppressor genes involved in DNA repair. Variants in the BRCA genes can lead to cancer.',
+    'BRCA1':'A tumour suppressor gene, variants in this gene can increase an individual’s risk of developing certain types of cancer.',
+    'BRCA2':'A tumour suppressor gene, variants in this gene can increase an individual’s risk of developing certain types of cancer.'
+   }
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in b:
+            value=b[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Term not found")    
+
+    
+    if user_input == 2:
+        for key in b:
+            value=b[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+    #welcome_message()
+
+
+def search_c():
+    c={
+'Call rate': 'The rate at which assignment of a specific nucleotide base (A,G,C,T) is made at specific positions in the genome during genotyping or sequencing.',
+'Candidate gene': 'A gene believed to influence expression of complex phenotypes due to known biological and/or physiological properties of its products, or to its location near a region of association or linkage.',
+'Carrier':'In genetics and genomics, a carrier is generally used to describe an individual who has a genomic variant associated with a genetic condition, but does not have the condition themselves.',
+'cDNA (complementary DNA)': 'A DNA copy of the messenger RNA (mRNA) transcribed from a gene. The cDNA is made from the mRNA using the enzyme reverse transcriptase.',
+'Cell-free fetal DNA':'Fetal DNA that is shed from the pregnancy and can be detected in the mother’s blood during pregnancy.',
+'Cellular differentiation': 'The process by which cells become more specialised in form and function.',
+'Cellular proliferation':'An increase in the number of cells due to growth and division.',
+'Cellular transformation':'The change that a normal cell undergoes as it becomes malignant.',
+'Cellularity':'The number of cells in a given tissue sample.',
+'CFTR gene':'The gene that provides instructions for making the CFTR protein, which functions as a channel across the cell membrane. Variants in this gene, if passed on by both parents, can result in an individual having cystic fibrosis.',
+'Clinical exome':'A test that looks at the protein-coding regions of the genome that have a known clinical association with disease.',
+'Clinical utility': 'The degree to which a test result guides clinical management and improves patient outcomes.',
+'Clinical validity': 'The likelihood that a test result correctly predicts presence or absence of disease or risk of disease.',
+'Clonal':'Cells that are genetically identical.',
+'Codon':'A sequence of three bases within DNA or RNA that encode for a particular amino acid – that is, they contain the instructions for the placement of a particular amino acid when producing a polypeptide.',
+'Comparative genomic hybridization (CGH)also array CGH': 'Technology wherein a DNA test sample is competitively hybridized with a reference sample of DNA of known sequence to a DNA microarray, used to detect copy number changes in the test sample.',
+'Complex trait':'A trait that has a genetic component that does not follow strict mendelian inheritance. It may involve the interaction of 2 or more genes or gene-environment interactions.',
+'Copy number variants':'A type of genomic variant that arises as a result of a duplication or deletion of a region of DNA.',
+'Coverage': 'The number of times a portion of the genome is sequenced in a sequencing reaction. Often expressed as “depth of coverage” and numerically as 1X, 2X, 3X, etc.',
+'CRISPR':'A technique used for editing genomes.',
+'Cytosine':'One of the organic bases found in DNA and RNA. Cytosine pairs with base guanine and is denoted by the letter ‘C’.',
+'Cytogenomic analysis': 'Technologies that assess the presence of copy number variants at locations throughout the genome, one example of which is comparative genomic hybridization.',
+    }
+    
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in c:
+            value=c[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Term not found")    
+
+    
+    if user_input == 2:
+        for key in c:
+            value=c[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+
+def search_d():
+    d={
+     'Denaturing high-performance liquid chromatography (DHPLC)': 'A high-performance liquid chromatography instrument uses temperature-dependent separation of DNA containing mismatched base pairs from PCR-amplified DNA fragments for chromatographic mutation analysis.',
+     'DNA barcoding': 'A method that uses a short genetic marker in a DNA sequence to identify it as belonging to a particular species or group of otherwise-related sequences.',
+     'De novo variant':'A variant that has arisen in an individual for the first time and is not inherited from a parent.',
+     'Deletions':'Where sections of the genome are missing. This can be short sections only a few bases long, or large tracts of DNA several kilobases long.',
+     'Deoxyribonucleic acid (DNA)': 'The chemical that contains, or ‘encodes’, genetic information. DNA is made up of four different chemical bases known as ‘A’ (adenine), ‘C’ (cytosine), ‘G’ (guanine) and ‘T’ (thymine).',
+     'Diagnostic genomic test':'A test where the result provides a diagnosis for a condition caused by changes in the genome.',
+     'Disease-modifying variants':'A type of variant that contributes towards a disease phenotype (clinical signs and symptoms), but is not causative on its own.',
+     'DNA ligase':'An enzyme that ’sticks’ DNA fragments together. Involved in DNA repair and replication.',
+     'DNA polymerase':'A type of enzyme that is able to synthesise DNA by chemically joining together nucleotides.',
+     'Dominant allele':'When two copies of a gene are present a dominant allele will result in the associated phenotype being expressed even when the dominant allele is only present on one copy of the chromosome.',
+     'Dominant phenotype':'A phenotype that occurs even when the causal allele occurs in a heterozygous individual.',
+     'Double helix':'The molecular structure formed by two strands of DNA.',
+     'Duplication':'Where sections of the genome have been duplicated. This can be short sections only a few bases long, or large tracts several kilobases long.',
+
+    }
+
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in d:
+            value=d[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Term not found")    
+
+    if user_input == 2:
+        for key in d:
+            value=d[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+def search_e():
+  
+    e={
+    'EGFR inhibitor':'Epidermal Growth Factor Receptor inhibitor. This group of medicines are used to treat a number of different cancer types. They act by blocking the overactive growth signals seen in cancer cells.',
+    'Encode':'To specify the genetic code for a protein. For example, there is a gene that ‘encodes’ for the dystrophin protein.',
+    'Environmental gene tag': 'Short sequences of DNA that contain bacterial genes in whole or part that can be used to aid in identification of related genetic material.',
+    'Epigenetics':'Modifications to DNA structure that do not alter the DNA sequence but can affect gene expression and an individual’s phenotype. Some epigenetic modifications can be inherited, while others are acquired throughout life.',
+    'Exome': 'The entire portion of the genome consisting of protein-coding sequences (as opposed to introns or noncoding DNA between genes).',
+    'Exon': 'Any segment of a gene that is represented in the mature messenger RNA (mRNA) product.'
+    
+    }
+
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in e:
+            value=e[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in e:
+            value=e[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+def search_f():
+    f={
+   'Frame shift mutation': 'Any mutation that disrupts the normal sequence of triplets causing a new sequence to be created that codes for different amino acids. Frame shift mutations are usually caused by an insertion or deletion of DNA and typically eventually produce a premature stop codon.',
+   'False negative':'Giving no association/result where there should be an association/result.',
+   'Fluorescent in situ hybridisation':'A genomic test where fluorescent probes are used to visualise the presence, absence and location of parts of the chromosomes.',
+   'Frameshift variant':'A genetic variant that changes the way codons are read during the process of creating an amino acid sequence.',
+
+    }  
+
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in f:
+            value=f[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in f:
+            value=f[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+def search_g():
+    g={
+    
+    'GC content': 'The percentage of nucleotides in a DNA sequence that are either guanine (G) or cytosine (C).',
+    'Germ cells':'The precursor to gametes. Variation can be present in germ cells (known as germline variation/mutation).',
+    'Genetic heterogeneity': 'A common phenotype caused by more than 1 gene.',
+    'Genetic Information Nondiscrimination Act (GINA)': 'US federal law passed in 2008 prohibiting the use of genetic information for decisions regarding employment or health insurance.',
+    'Genome': 'The sum total of the genetic material of a cell or an organism.',
+    'Genome annotation': 'Attachment of biological information to DNA sequence data.',
+    'Genome-wide analysis': 'A genetic study evaluating the potential linkage of genetic markers located throughout the genome to a specific trait. This approach has been used for mendelian disorders as well as complex traits (genome-wide association study [GWAS]).',
+    'Genomics': 'The study of genes and their function.',
+    'Genome editing':'Intentionally altering a DNA sequence in a living cell.',
+    'Genomic inflation factor': 'A mathematical term from genetic epidemiology used to control for population stratification in GWAS.',
+    'Genomic medicine':'A term used to describe medical advances and approaches based on human genomic information, sometimes referred to as personalized or precision medicine.',
+    'Genotype': 'The specific set of 2 alleles inherited at a genetic locus.',
+    'Guanine':'One of the organic bases found in DNA and RNA. Guanine pairs with base cytosine and is denoted by the letter ‘G’.',
+
+    }    
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in g:
+            value=g[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in g:
+            value=g[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+
+def search_h():
+    h = {
+'Haplotype': 'The combination of linked marker alleles (may be polymorphisms or mutations) for a given region of DNA on a single chromosome.',
+'Haploid':'Containing one copy of each chromosome. Human gametes (egg and sperm cells) are haploid, containing 22 autosomes and one sex chromosome.',
+'HapMap': 'The International HapMap Project developed a haplotype map of the human genome, the HapMap, that describes the common patterns of human DNA sequence variation. The HapMap is a key resource for finding genes affecting health, disease, and responses to drugs and environmental factors. The first release of the HapMap was made in 2005.',
+'Heterologous expression':'A research technique that causes a protein to be produced in a cell that does not normally make (ie, express) that protein.',
+'Heterotetrameric ion channels':'Ion channels made up of four different combinations of protein subunits is termed heterotetrameric',
+'Heteromultimeric ion channels':'Ion channels made up of two or more different subunits (heteromultimeric).',
+'Heterozygous': 'Having 2 unlike alleles at a particular locus.',
+'High-throughput sequencing':'DNA sequencing technology that permits rapid sequencing of large portions of the genome; so called because it vastly increases the throughput over classic Sanger sequencing.',
+'Homologous chromosomes':'Two chromosomes in a pair – normally one inherited from the mother and one from the father. For example, the two copies of Chromosome 1 in a cell would be referred to as homologous chromosomes.',
+'Homotetrameric ion channels':'Ion channels made up of four of the same subunit (homotetrameric)',
+'Homozygous': 'Having 2 like or identical alleles at a particular locus in a diploid genome.',
+'Human Genome Project':'Collective name for several projects begun in 1986 by the US Department of Energy (DOE) to create an ordered set of DNA segments from known chromosomal locations, develop new computational methods for analyzing genetic map and DNA sequence data, and develop new techniques and instruments for detecting and analyzing DNA. The joint national effort, led by DOE and the National Institutes of Health, was known as the Human Genome Project. The first draft of the human genome DNA sequence, produced by the efforts of the Human Genome Project, was completed in 2001. The Human Genome Project officially ended in April 2003.',
+'Human Phenotype Ontology':'A database providing a standardised vocabulary of phenotypic abnormalities found in human disease.',
+'Hybridization': 'The bonding of single-stranded DNA or RNA into double-stranded DNA or RNA. The ability of complementary stretches of DNA or RNA to hybridize with each other is dependent on the base-pair sequence.'
+}
+
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in h:
+            value=h[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in h:
+            value=h[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+
+def search_i():
+    i = {
+'Identity by descent (IBD)': 'The property of 2 or more alleles that are identical to an ancestral allele, used in gene association studies.',
+'Imputation':'A statistical method for inferring genotypes that are not directly measured.',
+'Incidental findings':'Unexpected results that are not related to the primary reason for requesting a genomic test.',
+'Inherited condition':'A condition caused by a genetic variant that has been passed down from parent to child.',
+'Initiation codon':'The codon that indicates where to begin transcription of a gene.',
+'Interphase':'The stage of the cell cycle when the cell grows and DNA replicates to prepare for mitosis.',
+'Intron': 'A segment of DNA that is transcribed into RNA but is ultimately removed from the transcript by splicing together the sequences on either side (exons) to produce messenger RNA (mRNA).',
+
+}
+
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in i:
+            value=i[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in i:
+            value=i[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+def search_j():
+    print( "Sorry, no entry found")
+
+
+def search_k():
+    k = {
+
+'Kilobase (kb)': 'One thousand base pairs of DNA or RNA.',
+'Karyotype':'An image of an organism’s chromosomes presented in their pairs from largest to smallest.',
+'Karyotyping':'Profiling a person’s chromosomes to look at their appearance and number.',
+
+}
+
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in k:
+            value=k[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in k:
+            value=k[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+def search_l():
+    l={
+'Library': 'A complete set of clones that contains all the genetic material from an organism, tissue, or specific cell type at a specific stage of development.',
+'Linkage': 'Two loci (genes or other designated DNA sequence) that reside close enough to each other that recombination (crossing over) rarely occurs between them. Alleles at the 2 loci do not assort independently at meiosis but are likely to be inherited together.',
+'Linkage disequilibrium': 'also called as (LD);Refers to alleles at loci close enough together that they remain inherited together through many generations because their extreme close proximity makes recombination (crossing over) between them highly unlikely.',
+'Locus': '(Plural form - loci) The physical site on a chromosome occupied by a particular gene or other identifiable DNA sequence characteristic.',
+'Long-read sequencing':'Reading sequences of more than 10,000 base pairs in a single continuous string.',
+
+}
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in l:
+            value=l[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in l:
+            value=l[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+def search_m():
+    m={
+'Megabase': 'One million base pairs.',
+'Mendelian disorder': 'Also known as - single-gene disorder; A trait or disease that follows the patterns of inheritance that suggest the trait or disease is determined by a gene at a single locus.',
+'Metagenomics': 'Study of a collection of genetic material (genomes) from a mixed community of organisms. Metagenomics usually refers to the study of microbial communities.',
+'Methylation': 'Covalent attachment of methyl groups to DNA, usually at cytosine bases. Methylation can reduce transcription from a gene and is a mechanism in X-chromosome inactivation and imprinting.',
+'Microarray': 'A technology used to study many genes simultaneously, usually consisting of an ordered microscopic pattern of known nucleic acid sequences on a glass slide. In a common type of microarray, a sample of DNA or RNA is added to the slide and sequence-dependent binding is measured using sensitive fluorescent detection methods.',
+'Minor allele': 'The allele of a biallelic polymorphism that is less frequent in the study population. Minor allele frequency refers to the proportion of the less common of 2 alleles in a population (with 2 alleles carried by each person at each autosomal locus) ranging from less than 1% to less than 50%.',
+'Missense mutation': 'A mutation that is typically the change of a single nucleotide that results in the substitution of one amino acid for another in the final gene product.',
+'Mutation': 'Any alteration of a gene or genetic material from its natural state. Generally, mutations refer to changes that alter the gene in a negative sense causing the protein product of the gene to have an altered function.',
+'Massively parallel sequencing':'A term given to describe modern high-throughput sequencing techniques that read the sequence of millions of short fragments of DNA or RNA at the same time',
+'Metabolomics':'The study of the molecules (metabolites) involved in the chemical reactions that maintain a cell (its metabolism).',
+'Microbiome':'The genetic material from all of the microorganisms living on and in an individual.',
+'Microbiota':'The community of microorganisms living on and in an individual.',
+'Missense variant':'A genetic variant where a base change results in a change in the amino acid that is encoded.',
+'Monosomy':'A cell with a missing chromosome from a homologous pair, for example Turner syndrome in which one of the X chromosomes is missing.',
+'Mosaicism':'When there are multiple genetically different populations of cells within one individual.',
+'Multifactorial condition':'A condition caused by multiple genetic and environmental factors.',
+'Multifactorial inheritance':'Conditions or traits that are caused by a combination of multiple genetic/genomic and/or environmental factors',
+
+}
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in m:
+            value=m[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in m:
+            value=m[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+
+def search_n():
+    n = {
+'Next generation sequencing': 'DNA sequencing technology that permits rapid sequencing of large portions of the genome; so called because it vastly increases the throughput over classic Sanger sequencing.',
+'Nonsense mutation': 'Any mutation that results directly in the formation of a stop codon.',
+'Nonsynonymous variant': 'A polymorphism that results in a change in the amino acid sequence of a protein (and therefore may affect the function of the protein).',
+'Nucleotide': 'The combination of a nitrogen-containing base, a 5-carbon sugar, and phosphate group forming the A, G, C, T of the sequence of DNA (DNA), for example.',
+'National Genomic Research Library':'A comprehensive national database involving a single consent process that stores pseudonymised patient samples and health and genomic data for access by approved researchers.',
+'National Genomic Test Directory':'A directory that specifies which genomic tests are commissioned by the NHS in England, the technology by which they are available and the patients who will be eligible to access each test.',
+'Non-invasive prenatal diagnosis':'A diagnostic genetic test that makes use of fetal DNA circulating in the maternal blood to test the fetus for particular genetic variants',
+'Nonsense variant':'When a DNA variant changes a coding codon to a stop codon. This results in a shorter, often non-functional protein.',
+
+}
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in n:
+            value=n[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in n:
+            value=n[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+
+def search_o():
+    o = {
+    'Oncogene': 'A gene, 1 or more forms of which is associated with cancer. Many oncogenes are involved, directly or indirectly, in controlling the rate of cell growth.',
+    'Off-target effects':'Also known as side-effects;When a drug has effects other than on its target within the body – may induce side effects.',
+
+}
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in o:
+            value=o[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in o:
+            value=o[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+def search_p():
+    p={
+'p arm':'The shortest ‘arm’ of a chromosome, based on the distance from the centromere. The ‘p’ comes from the word ‘petit’, the French translation of ‘small’.',
+'p53':'A protein that regulates programmed cell death and which is mutated in more than half of all cancers.',    
+'Patch-clamp technique': 'A laboratory technique in electrophysiology that allows the study of single or multiple ion channels in cells.',
+'Panel testing':'A genomic test that looks at a curated set of genes known to be associated with the development of a condition or a collection of clinical symptoms under investigation.',
+'Personalised medicine':'Medicine targeted towards an individual or group of individuals, which uses knowledge of genetic, environmental and lifestyle factors to determine suitable methods of prevention, diagnosis and treatment of disease.',
+'Pertinent findings':'The findings from genome sequencing that directly relate to the clinical question/disease being investigated; it also can be known as primary findings or main findings.',
+'Penetrance': 'The proportion of individuals of a given genotype who show any evidence of the associated phenotype.',
+'Pharmacogenetic polymorphism': 'Genetic variants that alter the way an individual metabolizes or responds to a specific medication.',
+'Pharmacogenomics': 'Study of genes related to genetic controlled variation in drug responses.',
+'Phenocopy':'When the underlying cause of a phenotype in a family member is different from the cause of the same phenotype in other family members.',
+'Phenotype': 'The total observable nature of an individual, resulting from interaction of the genotype with the environment.',
+'Plasmid': 'Circular extrachromosomal DNA molecules in bacteria that can independently reproduce. Plasmids can be used as vectors in recombinant DNA research, and they can contain genes important to bacterial virulence such as antibiotic resistance in nature.',
+'Pluripotent cell':'A ‘master’ cell that has the potential to give rise to all other cell types that make up the body.',
+'Polymerase chain reaction': 'Also called as PCR; A procedure in which segments of DNA (including DNA copies of RNA) can be amplified using flanking oligonucleotides called primers and repeated cycles of replication by DNA polymerase.',
+'Polymorphism': 'Difference in DNA sequence among individuals that may underlie differences in health. Genetic variations occurring in more than 1% of a population would be considered useful polymorphisms for genetic linkage analysis. The vast majority of DNA polymorphisms are benign and not associated with a detectable phenotype.',
+'Population stratification': 'Also called as population structure; A form of confounding in genetic association studies caused by genetic differences between cases and controls unrelated to disease but due to sampling them from populations of different ancestries.',
+'Predictive testing':'A type of genetic test used to determine if an asymptomatic individual (someone who isn’t presenting with any clinical signs or symptoms of a genetic condition) has a gene variant which may cause disease in the future.',
+'Proband': 'The affected person whose disorder, or concern about a disorder, brings a family or pedigree to be genetically evaluated.',
+'Promoter': 'The sequence of nucleotides located 5′ to the coding sequence of a gene that determines the site for binding of RNA polymerase and the initiation of transcription. More than 1 promoter may be present in a gene and may give rise to different versions of the protein.',
+'Prophage': 'The genome of a bacteriophage when it is integrated into the host bacterial genome or a plasmid.',
+'Pyrosequencing': 'A method of determining the ordering of nucleotide bases in a DNA molecule by measuring the synthesis of the complementary DNA strand.',
+
+}
+
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in p:
+            value=p[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in p:
+            value=p[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+def search_q():
+    q = {
+'q arm':'The longest ‘arm’ of a chromosome, based on the distance from the centromere.',
+'Quantitative PCR': 'A PCR-based laboratory technique that allows the accurate measurement of the amount of specific nucleic acids (usually RNA) in a sample.',
+
+}
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in q:
+            value=q[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in q:
+            value=q[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+def search_r():
+    r = {
+'Read': 'A discrete segment of sequence information generated by a sequencing instrument; read length refers to the number of nucleotides in the segment.',
+'Recombination': 'The formation of a new set of alleles on a single chromosome that is not the same as either parent owing to a crossover during meiosis.',
+'Restriction fragment-length polymorphism (RFLP)': 'A type of polymorphism that results from variation in the DNA sequence recognized by restriction enzymes. RFLPs can be used in linkage and gene association studies of traits and diseases.',
+'Read depth':'The number of times a particular base is represented within all the reads from sequencing. The higher the read depth, the more confidence scientists can have in identifying a base – known as ‘base calling’.',
+'Read length':'The number of bases that are read at one time i.e the number of letters that will appear in each read. This differs between technologies so optimum fragment length varies.',
+'Reference genome':'An established ‘normal’ genetic sequence for a particular organism with which other sequenced genomes can be compared.',
+'Reciprocal translocation':'The exchange of genetic material between two different chromosomes.',
+'Robertsonian translocation':'A type of translocation that occurs on acentric chromosomes where the long arm of one chromosome fuses with another.',
+
+}
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in r:
+            value=r[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in r:
+            value=r[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+def search_s():
+    s = {        
+'Single-nucleotide polymorphism': 'Also called as (SNP);DNA sequence variations that occur when a single nucleotide (A, T, C, or G) in the genome sequence is altered. SNPs are the most abundant variant in the human genome and are the most common source of genetic variation, with more than 10 million SNPs present in the human genome, representing a density of 1 SNP for approximately every 100 bases.',
+'Stop codon': 'Also called as termination codon;The DNA triplet that causes translation to end when it is found in messenger RNA (mRNA). The DNA stop codons are TAG, TAA, and TGA.',
+'Sanger sequencing':'A sequencing method that involves the incorporation of chain-terminating nucleotides, nucleotides that stop the sequencing reaction, into a DNA strand complementary to a single-stranded DNA template.The chain-terminating nucleotides are labelled (radioactive or fluorescent labelled) and the sequencing machine can ‘read’ the label to determine the DNA sequence.',
+'Sequence':'The order of the four nitrogenous bases in DNA or RNA.',
+'Sequencing':'Technique used in laboratories to determine the order of bases in DNA.',
+'Single gene condition':'Condition caused by a genetic variant in a particular gene.',
+'Single gene sequencing':'A genomic test that sequences all the exons of a particular gene.',
+'Splicing':'The complex process by which introns are removed and exons rejoined to form a mature mRNA transcript.',
+'Structural variants':'Alterations to the genome such as insertions, deletions or rearrangements.'
+}
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in s:
+            value=s[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in s:
+            value=s[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+def search_t():
+    t = {        
+'Tag SNP':'A readily measured SNP that is in strong linkage disequilibrium with multiple other SNPs so that it can serve as a proxy for these SNPs on large-scale genotyping platforms.',
+'Translocation': 'A chromosomal segment that has been broken off and reinserted in a different place in the genome.',
+'Transversion': 'The substitution of a purine for a pyrimidine nucleotide or vice versa (eg, an A for a C or T) in a DNA sequence.',
+'Telomeres':'Repetitive sequences of DNA at the end of each chromosome that act as protective caps to prevent deterioration.',
+'Transcription':'The process in which an mRNA molecule is produced from a specific region of the DNA.',
+'Transcription factors':'Proteins that can control whether a gene is transcribed or not.',
+'Transcriptomics':'The study of the complete set of messenger RNA transcribed from the genome (the transcriptome) in particular cells or tissues.',
+'Trisomy':'A cell with three copies of a particular chromosome, for example trisomy 18 (Edwards syndrome) in which a cell has an extra copy of chromosome 18.'
+
+}
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in t:
+            value=t[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in t:
+            value=t[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+def search_u():
+    u = {
+'Uniparental disomy': 'The inheritance of both parental copies of a chromosome from one parent and no homologous chromosome from the other parent. The resulting offspring could be affected with a recessive disease if the parent contributing both copies is a carrier.',
+'Unbalanced translocation':'A translocation between chromosomes resulting in the gain or loss of genetic material, likely resulting in a chromosomal condition.',
+
+}
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in u:
+            value=u[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in u:
+            value=u[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+def search_v():
+    v = {
+'Variant of unknown significance': 'Also known as VUS ;Genetic variant that cannot be definitively determined to be associated with a specific phenotype.',
+'Variants of uncertain significance':'Variants detected during sequencing, for which there is no or insufficient evidence either for or against pathogenicity. Consequently, the clinical impact is uncertain.',
+'Variant':'Any difference between the sequence of two individuals’ genomes or a reference genome. Variants can be harmless or disease causing (pathogenic).',
+
+}
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in v:
+            value=v[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in v:
+            value=v[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+
+def search_w():
+    w = {
+
+'Whole exome sequencing':'Sequencing only the protein-coding regions of the genome (around 2% of all DNA bases).',
+'Whole genome sequencing':'A type of genetic sequencing that has the potential to sequence every DNA base in a genome.'   
+}
+    print("Press 1: For searching a specific term")
+    print("  ")
+    print("Press 2: To search all the terms starting with same letter")
+    print(" ")
+    user_input =int(input("Please select an option : "))
+    if user_input ==1:
+        user_term = input("Please enter the term ")
+        user_term= user_term.capitalize()
+        if user_term in w:
+            value=w[user_term]
+            print(str(user_term)+ " --> " + str(value))
+        else:
+            print("Sorry, term not found ")    
+
+    if user_input == 2:
+        for key in w:
+            value=w[key]
+            print(str(key)+"  ->  "+ str(value))
+            print("  ")
+###################################################################################
+def welcome_message():
+    print("            ~~~GLOSSARY OF GENOMICS~~~        ")
+    print("            A     B     C     D     E     F   ")
+    print("            G     H     I     J     K     L   ")
+    print("            M     N     O     P     Q     R   ")
+    print("            S     T     U     V     W     X   ")
+    print("                        Y     Z                ")
+    print("  ")
+    #print("            Search a letter")
+   # print("           Press 2. Search a term in the entire glossary")
+    #print("           Press 2. Back to Main Menu")
+    
+    #user_input=(input("Please select one option :  "))
+
+    #if user_input == "":
+       # print(" Invalid entry")
+   # elif user_input == '1':
+
+    user_letter =input("Please enter the letter you want to search for? ")
+    if user_letter == "":
+       print(" Void entry. Please try again ")
+    
+    elif user_letter =='a'or user_letter =='A':
+            search_a()
+            print(" ")
+
+    elif  user_letter =='b'or user_letter =='B':
+            search_b()
+            print(" ")
+
+    elif user_letter =='c' or user_letter =='C':
+            search_c()    
+            print(" ")
+        
+    elif  user_letter =='d' or user_letter =='D':
+            search_d()    
+            print(" ") 
+
+    elif  user_letter =='e' or user_letter =='E':
+            search_e()    
+            print(" ")
+
+    elif  user_letter =='f' or user_letter =='F':
+            search_f()    
+            print(" ")
+
+    elif  user_letter =='g' or user_letter =='G':
+            search_g()    
+            print(" ")
+
+    elif  user_letter =='h' or user_letter =='H':
+            search_h()    
+            print(" ")
+
+    elif  user_letter =='i' or user_letter =='I':
+            search_i()    
+            print(" ")
+
+    elif  user_letter =='j' or user_letter =='J':
+            search_j()    
+            print(" ")
+
+    elif  user_letter =='k' or user_letter =='K':
+            search_k()    
+            print(" ")
+
+    elif  user_letter =='l' or user_letter =='L':
+            search_l()    
+            print(" ")
+
+    elif  user_letter =='m' or user_letter =='M':
+            search_m()    
+            print(" ")
+
+    elif  user_letter =='n' or user_letter =='N':
+            search_n()    
+            print(" ")
+
+    elif  user_letter =='o' or user_letter =='O':
+            search_o()    
+            print(" ")  
+
+    elif  user_letter =='p' or user_letter =='P':
+            search_p()    
+            print(" ")
+
+    elif user_letter =='q' or user_letter =='Q':
+            search_q()    
+            print(" ")
+
+    elif  user_letter =='r' or user_letter =='R':
+            search_r()    
+            print(" ")
+
+    elif  user_letter =='s' or user_letter =='S':
+            search_s()    
+            print(" ")
+
+    elif  user_letter =='t' or user_letter =='T':
+            search_t()    
+            print(" ")
+
+    elif  user_letter =='u' or user_letter =='U':
+            search_u()    
+            print(" ")
+
+    elif  user_letter =='v' or user_letter =='V':
+            search_v()    
+            print(" ")
+
+    elif  user_letter =='w' or user_letter =='W':
+            search_w()    
+            print(" ")
+
+    elif  user_letter =='x' or user_letter =='X':
+            print("No entry found")    
+            print(" ")
+
+    elif  user_letter =='y' or user_letter =='Y':
+            print("No entry found")    
+            print(" ")  
+
+    elif user_letter =='z' or user_letter =='Z':
+            print("No entry found")    
+            print(" ")      
+
+    else:
+        if user_letter >= '0':
+            print(" Invalid entry ")
+
+    #else:
+       # welcome_message()
+
+def main():
+    
+###### LOGIC
+#  Search by letter
+# MAKE SEARCH BY LETTER FUNCTION EG. SEARCH_b, search_c, search_d etc.
+# In the function definition, 1. create the letter dictionary
+# ASK the user if they want to search a specific term in that letter section, 
+# or all the terms in the letter section?
+
+#2. search by letter which prints all the terms starting with that letter.
+#3. search by term, in which we take a term from user and match it with the key
+# of the dictionary. and then return the value of the dictionary.
+
+# SECOND OPTION IN MENU . SEARCH BY TERM
+# it will search a term in all the dictionaries.
+# make a function where all the dictionaries will be merged together.
+# check on google for further coding.
+
+    welcome_message()        
+    
+    
+    
+
+
+
+if __name__ == "__main__":
+    main()
